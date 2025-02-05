@@ -1,5 +1,8 @@
-import Image from "next/image";
+import React from "react";
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from "./page.module.css";
+import Banner from "../components/Banner";
 export const metadata = {
   title: "Clinica NTL",
   description: "Clinica Médica",
@@ -7,13 +10,21 @@ export const metadata = {
   author: "Nathan Teixeira Lopes",
   keywords: "HTML, CSS, JavaScript, React, Next.js",
 };
-export default function Home() {
-  var autor = 'Nathan Teixeira Lopes'
+const Home = () => {
   return (
-    <div>
-      <h1>Página Inicial</h1>
-      <p>Parágrafo da página inicial</p>
-      <p>Autor: {autor}</p>
-    </div>
+    <main className={styles.main}>
+      <Banner>
+        <div className={styles.bannerContent}>
+          <h2>BEM VINDO À CLÍNICA NTL!</h2>
+          <p>
+            Nossa equipe de profissionais altamente qualificados está pronta para cuidar da sua saúde com dedicação e excelência.
+            Oferecemos um atendimento humanizado, tecnologia de ponta e uma ampla gama de especialidades médicas para garantir seu bem-estar.
+          </p>
+          <button className={styles.button}>Agende Consulta</button>
+        </div>
+      </Banner>
+    </main>
   );
-}
+};
+
+export default Home;

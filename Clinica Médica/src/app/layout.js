@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from  "@/components/Header"
+import Footer from "@/components/Footer";
 export const metadata = {
   title: "Clinica NTL",
   description: "Clinica Médica",
@@ -12,9 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body>
-        <header>
-          {children}
-        </header>
+        <Header/>
+        {children}
+        <Footer/>
       </body>
     </html>
   );
