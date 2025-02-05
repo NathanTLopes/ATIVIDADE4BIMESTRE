@@ -16,11 +16,13 @@ const Home = () => {
       <Banner>
         <div className={styles.bannerContent}>
           <h2>BEM VINDO À CLÍNICA NTL!</h2>
-          <p>
-            Nossa equipe de profissionais altamente qualificados está pronta para cuidar da sua saúde com dedicação e excelência.
-            Oferecemos um atendimento humanizado, tecnologia de ponta e uma ampla gama de especialidades médicas para garantir seu bem-estar.
-          </p>
-          <button className={styles.button}>Agende Consulta</button>
+          <div className={styles.textbutton}>
+            <p>
+              Nossa equipe de profissionais altamente qualificados<br/> está pronta para cuidar da sua saúde com dedicação e<br/> excelência.
+              Oferecemos um atendimento humanizado,<br/> tecnologia de ponta e uma ampla gama de<br/> especialidades médicas para garantir seu bem-estar.
+            </p>
+            <button className={styles.button}>Agende Consulta</button>
+          </div>
         </div>
       </Banner>
     </main>
