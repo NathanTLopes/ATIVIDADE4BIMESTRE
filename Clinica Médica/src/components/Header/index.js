@@ -31,8 +31,10 @@ export default function Header() {
               <a href="#">MÉDICOS</a>
               {openDropdown === "medicos" && (
                 <ol className={styles.submenu}>
-                  <li><Link href="#">Lista de Médicos</Link></li>
-                  <li><Link href="#">Especialidades</Link></li>
+                  <li><Link href="#">Listar</Link></li>
+                  <li><Link href="#">Adicionar</Link></li>
+                  <li><Link href="#">Editar</Link></li>
+                  <li><Link href="#">Excluir</Link></li>
                 </ol>
               )}
             </li>
@@ -45,8 +47,10 @@ export default function Header() {
               <a href="#">PACIENTES</a>
               {openDropdown === "pacientes" && (
                 <ol className={styles.submenu}>
-                  <li><Link href="#">Área do Paciente</Link></li>
-                  <li><Link href="#">Histórico Médico</Link></li>
+                  <li><Link href="#">Listar</Link></li>
+                  <li><Link href="#">Adicionar</Link></li>
+                  <li><Link href="#">Editar</Link></li>
+                  <li><Link href="#">Excluir</Link></li>
                 </ol>
               )}
             </li>
@@ -59,8 +63,10 @@ export default function Header() {
               <a href="#">AGENDAMENTO</a>
               {openDropdown === "agendamento" && (
                 <ol className={styles.submenu}>
-                  <li><Link href="#">Agendar Consulta</Link></li>
-                  <li><Link href="#">Minhas Consultas</Link></li>
+                  <li><Link href="#">Listar Consultas</Link></li>
+                  <li><Link href="#">Agendar Consultas</Link></li>
+                  <li><Link href="#">Editar Agendamento</Link></li>
+                  <li><Link href="#">Cancelar</Link></li>
                 </ol>
               )}
             </li>

@@ -4,6 +4,7 @@ import { buscarTodosMedicos, buscarMedicoPorNome, buscarMedicoPorEspecialidade, 
 const app = express();
 app.use(express.json());
 
+// Cadastrar médico (POST /medicos)
 app.post("/medicos", async (req, res) => {
     const { nome, telefone, email, especialidade } = req.body;
 
@@ -19,17 +20,19 @@ app.post("/medicos", async (req, res) => {
     }
 });
 
+//  Listar médicos com filtros opcionais (GET /medicos)
 app.get("/medicos", async (req, res) => {
-    let medicos;
     const { nome, especialidade } = req.query;
 
     try {
-        if (!nome && !especialidade) {
-            medicos = await buscarTodosMedicos();
-        } else if (nome) {
-            medicos = await buscarMedicoPorNome(nome);
+        let medicos;
+
+        if (nome) {
+            medicos = await buscarMedicoPorNome(nome.trim());
         } else if (especialidade) {
-            medicos = await buscarMedicoPorEspecialidade(especialidade);
+            medicos = await buscarMedicoPorEspecialidade(especialidade.trim());
+        } else {
+            medicos = await buscarTodosMedicos();
         }
 
         if (medicos.length > 0) {
@@ -42,6 +45,7 @@ app.get("/medicos", async (req, res) => {
     }
 });
 
+//  Inicia o servidor
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000...");
 });
