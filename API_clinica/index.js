@@ -1,5 +1,5 @@
 import express from "express";
-import { buscarTodosMedicos, buscarMedicoPorNome, buscarMedicoPorEspecialidade, cadastrarMedico } from "./retornaMedicos_servico.js";
+import { buscarTodosMedicos, buscarMedicoPorNome, buscarMedicoPorEspecialidade, cadastrarMedico } from "./servico/retornaMedicos_servico.js";
 
 const app = express();
 app.use(express.json());
