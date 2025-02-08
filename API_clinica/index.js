@@ -1,51 +1,30 @@
-import express from "express";
-import { buscarTodosMedicos, buscarMedicoPorNome, buscarMedicoPorEspecialidade, cadastrarMedico } from "./servico/retornaMedicos_servico.js";
+import express from 'express';
+import { buscarTodosMedicos, buscarMedicosPorNome, buscarMedicosPorEspecialidade } from './servico/retornaMedicos_servico.js';
 
 const app = express();
-app.use(express.json());
 
-// Cadastrar médico (POST /medicos)
-app.post("/medicos", async (req, res) => {
-    const { nome, telefone, email, especialidade } = req.body;
+app.get('/medicos', async (req, res) => {
+    let resultadoMedicos;
 
-    if (!nome || !telefone || !email || !especialidade) {
-        return res.status(400).json({ erro: "Todos os campos são obrigatórios" });
+    const nomeBusca = req.query.nome;
+    const especialidadeBusca = req.query.especialidade;
+
+    if (typeof nomeBusca === 'undefined' && typeof especialidadeBusca === 'undefined') {
+        resultadoMedicos = await buscarTodosMedicos();
+    } else if (typeof nomeBusca !== 'undefined') {
+        resultadoMedicos = await buscarMedicosPorNome(nomeBusca);
+    } else if (typeof especialidadeBusca !== 'undefined') {
+        resultadoMedicos = await buscarMedicosPorEspecialidade(especialidadeBusca);
     }
 
-    try {
-        await cadastrarMedico(nome, telefone, email, especialidade);
-        res.status(201).json({ mensagem: "Médico cadastrado com sucesso!" });
-    } catch (erro) {
-        res.status(500).json({ erro: "Erro ao cadastrar médico", detalhes: erro.message });
-    }
-});
-
-//  Listar médicos com filtros opcionais (GET /medicos)
-app.get("/medicos", async (req, res) => {
-    const { nome, especialidade } = req.query;
-
-    try {
-        let medicos;
-
-        if (nome) {
-            medicos = await buscarMedicoPorNome(nome.trim());
-        } else if (especialidade) {
-            medicos = await buscarMedicoPorEspecialidade(especialidade.trim());
-        } else {
-            medicos = await buscarTodosMedicos();
-        }
-
-        if (medicos.length > 0) {
-            res.json(medicos);
-        } else {
-            res.status(404).json({ mensagem: "Nenhum médico encontrado" });
-        }
-    } catch (erro) {
-        res.status(500).json({ erro: "Erro ao buscar médicos", detalhes: erro.message });
+    if (resultadoMedicos.length > 0) {
+        res.json(resultadoMedicos);
+    } else {
+        res.status(404).json({ mensagem: "Nenhum médico encontrado" });
     }
 });
 
-//  Inicia o servidor
-app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000...");
+app.listen(9000, () => {
+    const dataAtual = new Date();
+    console.log("Servidor iniciado em " + dataAtual);
 });
