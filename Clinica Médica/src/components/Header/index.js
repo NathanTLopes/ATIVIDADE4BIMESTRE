@@ -21,7 +21,7 @@ export default function Header() {
         </div>
         <nav className={styles.nav}>
           <ul>
-            <li><a href="#">HOME</a></li>
+            <li><a href="/">HOME</a></li>
   
             <li 
               className={styles.menuitem} 
@@ -31,7 +31,7 @@ export default function Header() {
               <a href="#">MÉDICOS</a>
               {openDropdown === "medicos" && (
                 <ol className={styles.submenu}>
-                  <li><Link href="#">Listar</Link></li>
+                  <li><Link href="Medicos">Listar</Link></li>
                   <li><Link href="#">Adicionar</Link></li>
                   <li><Link href="#">Editar</Link></li>
                   <li><Link href="#">Excluir</Link></li>
@@ -47,7 +47,7 @@ export default function Header() {
               <a href="#">PACIENTES</a>
               {openDropdown === "pacientes" && (
                 <ol className={styles.submenu}>
-                  <li><Link href="#">Listar</Link></li>
+                  <li><Link href="Pacientes">Listar</Link></li>
                   <li><Link href="#">Adicionar</Link></li>
                   <li><Link href="#">Editar</Link></li>
                   <li><Link href="#">Excluir</Link></li>
@@ -63,7 +63,7 @@ export default function Header() {
               <a href="#">AGENDAMENTO</a>
               {openDropdown === "agendamento" && (
                 <ol className={styles.submenu}>
-                  <li><Link href="#">Listar Consultas</Link></li>
+                  <li><Link href="Consultas">Listar Consultas</Link></li>
                   <li><Link href="#">Agendar Consultas</Link></li>
                   <li><Link href="#">Editar Agendamento</Link></li>
                   <li><Link href="#">Cancelar</Link></li>

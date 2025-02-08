@@ -1,0 +1,88 @@
+.container{
+    background-color: rgb(230, 230, 230);
+    width: 90%;
+    margin: 5% auto;
+    border-radius: 20px;
+}
+
+.containerPesquisa{
+    display: flex;
+    margin: 1%;
+}
+
+.botaoPesquisar{
+    background-color: rgb(53, 53, 53);
+    color: white;
+    border: none;
+    padding: 1% 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.tabelaContainer{
+    width: 100%;
+    border-collapse: collapse;
+    padding: 2%;
+}
+
+.tabela{
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.cabecalho{
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
+.linhaCabecalho > th{
+    min-width: 50px;
+    text-align: justify;
+    padding: 1%;
+    border: 1px solid #ddd;
+}
+
+.corpoTabela{
+    background-color: rgb(247, 247, 247);
+}
+
+.linhaCorpo{
+    text-align: justify;
+}
+
+.linhaCorpo > td{
+    padding: 1%;
+    border: 1px solid #464646;
+}
+
+.linhaCorpo:hover > td{
+    background-color: rgb(230, 230, 230);
+}
+
+.containerListaPesquisa{
+    position: absolute;
+    background-color: rgb(207, 207, 207);
+    border-radius: 10px;
+    overflow-x: auto;
+    max-height: 350px;
+    padding: 1%;
+}
+
+.containerInput{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.listaPesquisa{
+    list-style-type: none;
+    padding: 10px 0;
+    color: rgb(0, 0, 0);
+}
+
+.input{
+    width: 100%;
+    padding: 2% 1%;
+    border-radius: 10px;
+    border: 1px solid rgb(53, 53, 53);
+}
