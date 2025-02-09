@@ -41,7 +41,7 @@ export default function Medicos() {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.titulo}>Lista de Médicos</h2>
+            <h2 className={styles.tituloh1}>Lista de Médicos</h2>
             <div className={styles.containerPesquisa}>
                 <button className={styles.botaoPesquisar} onClick={() => { setShowListaDePesquisa(!showListaDePesquisa); }}>Buscar médico</button>
                 {showListaDePesquisa && (

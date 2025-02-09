@@ -6,17 +6,17 @@
     padding: 20px;
     color: white;
 }
-
-.titulo {
+.tituloh1 {
     text-align: center;
-    font-size: 24px;
+    font-size: 34px;
     margin-bottom: 10px;
 }
 
 .containerPesquisa {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 20px;
+    
 }
 
 .botaoPesquisar {

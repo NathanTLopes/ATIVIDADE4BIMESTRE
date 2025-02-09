@@ -45,28 +45,24 @@ export default function pacientes() {
 
     return (
         <div className={styles.container}>
+            <h2 className={styles.tituloh1}>Lista de Pacientes</h2>
             <div className={styles.containerPesquisa}>
                 <button className={styles.botaoPesquisar} onClick={() => { setShowListaDePesquisaPaciente(!showListaDePesquisaPaciente) }}>Pesquisar paciente</button>
-                {
-                    showListaDePesquisaPaciente &&
-                    <div className={styles.containerListaPesquisa}>
-                        <div className={styles.containerInput}>
-                            
-                            <input
-                                type="text"
-                                onChange={(e) => pesquisarPacientePorNome(e.target.value)}
-                                placeholder="Pesquisar paciente"
-                                className={styles.input}
-                                onInput={(e) => e.target.value = e.target.value.replace(/['"]/g, '')}
-                            />
+                {showListaDePesquisaPaciente && (
+                    <>
+                        <div className={styles.fundoPopUp} onClick={() => setShowListaDePesquisaPaciente(false)}></div>
+                        <div className={styles.containerListaPesquisa}>
+                            <div className={styles.containerInput}>
+                                <input type="text" onChange={(e) => pesquisarPacientePorNome(e.target.value)} placeholder="Pesquisar paciente" className={styles.input} onInput={(e) => e.target.value = e.target.value.replace(/['"]/g, '')}/>
+                            </div>
+                            <ul className={styles.listaPesquisa}>
+                                {pacientePorNome.map((paciente) => (
+                                    <li className={styles.linhaListaPesquisa} key={paciente.id}>{paciente.nome}</li>
+                                ))}
+                            </ul>
                         </div>
-                        <ul className={styles.listaPesquisa}>
-                            {pacientePorNome.map((paciente) => (
-                                <li className={styles.linhaListaPesquisa} key={paciente.id}>{paciente.nome}</li>
-                            ))}
-                        </ul>
-                    </div>
-                }
+                    </>
+                )}
             </div>
             <div className={styles.tabelaContainer}>
                 <table className={styles.tabela}>
