@@ -11,6 +11,7 @@ export const metadata = {
   keywords: "HTML, CSS, JavaScript, React, Next.js",
 };
 const Home = () => {
+
   return (
     <main className={styles.main}>
       <Banner>
@@ -23,8 +24,11 @@ const Home = () => {
             </p>
             <button className={styles.button}>Agende Consulta</button>
           </div>
+          
         </div>
       </Banner>
+
+      
     </main>
   );
 };

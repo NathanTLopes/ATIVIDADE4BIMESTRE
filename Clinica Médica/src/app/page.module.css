@@ -28,13 +28,20 @@
 .button {
     background-color: #d9534f;
     border: none;
-    padding: 20px 8px; 
+    padding: 4px; 
     color: white;
     font-size: 0.9rem; 
     cursor: pointer;
-    margin-top: 20px;
     margin-right: 20px;
-    width: auto; 
     border-radius: 10px;
-    
+    width: 130px;
+    height: 50px;
+    transition: 0.5s ease;
+}
+
+.button:hover{
+    background-color:#a33d3a;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    color: aliceblue;
+    font-weight: 700;
 }
