@@ -15,9 +15,9 @@
   .nav ul {
     display: flex;
     list-style: none;
-    gap: 50px;
+    gap: 100px;
     padding: 0;
-    margin: 0;
+    margin-right: 58px;
 }
 
 .nav a {
@@ -67,8 +67,4 @@
     font-weight: normal;
     display: block;
     transition: color 0.3s;
-}
-
-.submenu li a:hover {
-    color: blue;
 }
